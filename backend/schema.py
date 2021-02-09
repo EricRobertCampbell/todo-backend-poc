@@ -17,7 +17,7 @@ class Query(graphene.ObjectType):
     def resolve_all_todos(root, info):
         return Todo.objects.all()
 
-    def get_todo(root, info, id):
+    def resolve_get_todo(root, info, id):
         try:
             todo = Todo.objects.get(pk=id)
             return todo
