@@ -57,9 +57,26 @@ class EditTodo(graphene.Mutation):
         return EditTodo(ok=True, todo=todo)
 
 
+class SetTodoComplete(graphene.Mutation):
+    class Arguments:
+        id = graphene.ID()
+        complete = graphene.Boolean()
+
+    ok = graphene.Boolean()
+    todo = graphene.Field(lambda: TodoType)
+
+    def mutate(root, info, id, complete):
+        todo = Todo.objects.get(id=id)
+        todo.complete = complete
+        todo.save()
+
+        return SetTodoComplete(ok=True, todo=todo)
+
+
 class Mutation(graphene.ObjectType):
     create_todo = CreateTodo.Field()
     edit_todo = EditTodo.Field()
+    set_todo_complete = SetTodoComplete.Field()
 
 
 schema = graphene.Schema(query=Query, mutation=Mutation)
