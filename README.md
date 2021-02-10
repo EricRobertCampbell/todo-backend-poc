@@ -1,12 +1,12 @@
 #Django Backend POC
 
 - To run tests:
-```
-python manage.py test
-```
+	```
+	python manage.py test
+	```
 	- There should be exactly one test, which should pass
 
-- Before running the associated fronted tests, run
+- Before running the associated frontend tests, run
 ```
 python manage.py migrate && python manage.py populateDb
 ```
