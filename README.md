@@ -1,5 +1,21 @@
 # Django Backend POC
 
+- To stand up the backend locally:
+	From the root folder of the repo
+	- Create and activate your venv
+	```
+	python -m venv venv
+	.\venv\Scripts\activate
+	```
+	- Install the requirements
+	```
+	pip install -r .\requirements.txt
+	```
+	- Stand up the django server with the command
+	```
+	python manage.py runserver
+	```
+
 - To run tests:
 	```
 	python manage.py test
