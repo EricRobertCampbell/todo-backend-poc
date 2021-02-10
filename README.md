@@ -8,6 +8,6 @@ python manage.py test
 
 - Before running the associated fronted tests, run
 ```
-python manage.py populateDb
+python manage.py migrate && python manage.py populateDb
 ```
 (The frontend tests rely on this data)
