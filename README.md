@@ -1,7 +1,7 @@
 # Django Backend POC
 
 - To stand up the backend locally:
-	From the root folder of the repo
+	- From the root folder of the repo
 	- Create and activate your venv
 	```
 	python -m venv venv
